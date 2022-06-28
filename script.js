@@ -2,6 +2,7 @@ const addBook = document.querySelector('.add-button');
 const popup = document.querySelector('.pop-up');
 const formSubmit = document.querySelector('#add-form');
 const bookie = document.querySelector('.books');
+const closed = document.querySelector('.close');
 
 let books = [],
     reddit = 0;
@@ -48,9 +49,11 @@ function display() {
 
         edit.textContent = 'edit';
         edit.setAttribute('value', i);
+        edit.classList.add('edit');
 
         remove.textContent = 'remove';
         remove.setAttribute('value', i);
+        remove.classList.add('remove');
 
         container.classList.add('card');
         container.appendChild(title);
@@ -75,8 +78,7 @@ function readstat() {
         total.textContent = books.length;
         readbook.textContent = reddit;
         unreadbook.textContent = books.length - reddit;
-    }
-    else {
+    } else {
         total.textContent = books.length;
         readbook.textContent = 0;
         unreadbook.textContent = 0;
@@ -97,7 +99,7 @@ function editit(e) {
 
 function removebook(e) {
     console.log(e.target.value);
-    if(books[e.target.value].read == 'read') reddit--;
+    if (books[e.target.value].read == 'read') reddit--;
     books.splice(e.target.value, 1);
     display();
 }
@@ -109,6 +111,10 @@ function addbooks() {
 
 formSubmit.addEventListener('submit', entry);
 addBook.addEventListener('click', addbooks);
+closed.onclick = e => {
+    popup.style.visibility = 'hidden';
+    popup.style.opacity = 0;
+}
 document.onclick = e => {
     if (e.target == popup) {
         popup.style.visibility = 'hidden';

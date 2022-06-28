@@ -43,16 +43,23 @@
         <!-- popup for submitting book entry -->
         <div class="pop-up">
             <div class="dialog-box">
+                <div class="close-btn"><button class="close">x</button></div>
                 <form id="add-form">
                     <legend>Enter book info:</legend>
-                    <label for="title">Enter Book Title</label>
-                    <input type="text" name="title" id="title">
-                    <label for="author">Enter Book Author</label>
-                    <input type="text" name="author" id="auhtor">
-                    <input type="radio" name="readstat" id="read" value="read">
-                    <label for="read">Read</label>
-                    <input type="radio" name="readstat" id="not-read" value="not read" checked>
-                    <label for="not-read">Not Read</label>
+                    <div>
+                        <label for="title">Enter Book Title</label>
+                        <input type="text" name="title" id="title" required>
+                    </div>
+                    <div>
+                        <label for="author">Enter Book Author</label>
+                        <input type="text" name="author" id="auhtor" required>
+                    </div>
+                    <div>
+                        <input type="radio" name="readstat" id="read" value="read">
+                        <label for="read">Read</label>
+                        <input type="radio" name="readstat" id="not-read" value="not read" checked>
+                        <label for="not-read">Not Read</label>
+                    </div>
                     <button type="submit" id="add-book">Add</button>
                 </form>
             </div>
