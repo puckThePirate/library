@@ -7,10 +7,12 @@ const closed = document.querySelector('.close');
 let books = [],
     reddit = 0;
 
-function book(title, author, read) {
+class book {
+    constructor(title, author, read) {
     this.title = title;
     this.author = author;
     this.read = read;
+}
 }
 
 function entry(e) {
